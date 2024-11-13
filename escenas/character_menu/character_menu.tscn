@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmejr8fjg53i7"]
+
+[ext_resource type="Script" path="res://escenas/character_menu/character_menu.gd" id="1_euhxf"]
+[ext_resource type="Texture2D" uid="uid://cqeex8rqn8xcw" path="res://icon.svg" id="1_lb1io"]
+
+[node name="Panel" type="Panel"]
+offset_left = 36.0
+offset_top = 532.0
+offset_right = 390.0
+offset_bottom = 703.0
+script = ExtResource("1_euhxf")
+
+[node name="Label_hp" type="Label" parent="."]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 49.0
+offset_right = 201.0
+offset_bottom = 72.0
+text = "HP
+"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Label_hp"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 32.0
+offset_top = 22.0
+offset_right = 224.0
+offset_bottom = 49.0
+value = 100.0
+show_percentage = false
+
+[node name="Label_mp" type="Label" parent="."]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 98.0
+offset_right = 202.0
+offset_bottom = 121.0
+text = "MP
+"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Label_mp"]
+modulate = Color(0.141176, 0.4, 1, 1)
+layout_mode = 0
+offset_left = 33.0
+offset_top = 22.0
+offset_right = 225.0
+offset_bottom = 49.0
+value = 100.0
+show_percentage = false
+
+[node name="Label_name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 26.0
+offset_right = 297.0
+offset_bottom = 49.0
+text = "Character Name"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(76, 81)
+texture = ExtResource("1_lb1io")
+metadata/_edit_group_ = true

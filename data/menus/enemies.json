@@ -1,0 +1,38 @@
+{
+    "actions":
+    [
+        {
+            "key":"enemy_1",
+            "text":
+            {
+                "es":"Dragon",
+                "en":"Dragon"
+            }
+        },
+        {
+            "key":"enemy_2",
+            "text":
+            {
+                "es":"Gnomo",
+                "en":"Gnome"
+            }
+        },
+        {
+            "key":"enemy_3",
+            "text":
+            {
+                "es":"Demonio",
+                "en":"Demon"
+            }
+        },
+        {
+            "key":"CANCEL",
+            "text":
+            {
+                "es":"Cancelar",
+                "en":"CANCEL"
+            }
+        }    
+        
+    ]
+}

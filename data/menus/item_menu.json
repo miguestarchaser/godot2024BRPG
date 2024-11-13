@@ -1,0 +1,30 @@
+{
+    "actions":
+    [
+        {
+            "key":"health_potion",
+            "text":
+            {
+                "es":"pocion de curacion",
+                "en":"health_potion"
+            }
+        },
+        {
+            "key":"mana_potion",
+            "text":
+            {
+                "es":"pocion de mana",
+                "en":"mana_potion"
+            }
+        },
+        {
+            "key":"CANCEL",
+            "text":
+            {
+                "es":"CANCELAR",
+                "en":"CANCEL"
+            }
+        }
+    ] 
+    
+}
