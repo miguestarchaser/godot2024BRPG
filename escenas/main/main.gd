@@ -3,15 +3,15 @@ extends Node2D
 
 var _character_create			= load("res://escenas/ui/character_creation/character_creation.tscn");
 var _character_menu				= load("res://escenas/character_menu/character_menu.tscn");
-var _player 					= load("res://escenas/player/player.tscn");
-var _enemy 						= load("res://escenas/enemy/enemy_map.tscn");
+#var _player 					= load("res://escenas/player/player.tscn");
+#var _enemy 						= load("res://escenas/enemy/enemy_map.tscn");
 var _defaults					= load("res://scripts/defaults/defaults.gd");
 var _battle_defaults			= load("res://scripts/defaults/battle_default.gd");
 
 var defaults:Node;
 var battle_defaults:Node;
-var player;
-var enemy;
+#var player;
+#var enemy;
 
 #var _menu:PackedScene	 		= preload("res://escenas/ui/dinamic_menu/dinamic_menu.tscn")
 #ar _menu_feo:PackedScene 		= preload("res://escenas/ui/battle_menu/battle_menu.tscn")
@@ -57,12 +57,14 @@ func _ready() -> void:
 func set_character() -> void:
 	#defaults 		= _defaults.new();
 	#character_info 	= defaults.load_data();	
-	player 			= _player.instantiate(); 
-	add_child(player)
-	enemy 			= _enemy.instantiate();
-	add_child(enemy)
-	enemy.position = Vector2(900,400)
-	enemy.connect("battle_start",combat_start,1);
+	#player 			= _player.instantiate(); 
+	#add_child(player)
+	#enemy 			= _enemy.instantiate();
+	#add_child(enemy)
+	#enemy.position = Vector2(900,400)
+	#enemy.connect("battle_start",combat_start,1);
+	#$NavigationRegion2D/Enemy1.connect("battle_start",combat_start,1);
+	#$NavigationRegion2D/Enemy2.connect("battle_start",combat_start,1);
 	
 	#print(character_info.name)
 	#print(character_info.portrait)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnaod3xkjy8wd"]
+[gd_scene load_steps=6 format=3 uid="uid://cnaod3xkjy8wd"]
 
 [ext_resource type="Script" path="res://escenas/enemy/enemy_map.gd" id="1_bage0"]
 [ext_resource type="Texture2D" uid="uid://cqeex8rqn8xcw" path="res://icon.svg" id="1_jvsge"]
 [ext_resource type="SpriteFrames" uid="uid://bjku0xo0jrhbu" path="res://assets/sprites/enemies/monster_atlas.tres" id="3_tcytl"]
+[ext_resource type="AudioStream" uid="uid://clsx3bjw1grup" path="res://assets/sounds/06.wav" id="4_k55nn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7txk"]
 size = Vector2(180, 193)
@@ -23,5 +24,13 @@ texture = ExtResource("1_jvsge")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("3_tcytl")
 animation = &"monster3"
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-400, 0)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_k55nn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

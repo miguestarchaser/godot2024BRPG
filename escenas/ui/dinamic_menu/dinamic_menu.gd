@@ -41,7 +41,7 @@ func create_menu(dataset)->void:
 	last_item_position = Vector2($Cursor.position.x + 30, $Cursor.position.y-10)
 	for action in menu_data.actions:
 		#print(action.key)
-		actions.append(action.key)
+		actions.append(str(action.key))
 		var lbl = Label.new();
 		$Labels.add_child(lbl);
 		lbl.set_text(action["text"][lang]);
@@ -109,6 +109,7 @@ func _input(event: InputEvent) -> void:
 			active = false;
 			$AudioStreamPlayer2D.stream = ui_enter;
 			$AudioStreamPlayer2D.play()
+			print(actions.size())
 			emit_signal("selected_action",actions[current_position-1]);#menu_data["actions"][current_position].values
 			pass
 	pass

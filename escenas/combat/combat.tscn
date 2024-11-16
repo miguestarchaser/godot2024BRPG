@@ -6,7 +6,12 @@
 script = ExtResource("1_lhhak")
 
 [node name="enemy" type="Marker2D" parent="."]
-position = Vector2(407, 334)
+position = Vector2(749, 611)
 
 [node name="player" type="Marker2D" parent="."]
-position = Vector2(124, 560)
+position = Vector2(183, 1057)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1954.0
+offset_bottom = 1247.0
+color = Color(0.545098, 0.584314, 1, 1)
