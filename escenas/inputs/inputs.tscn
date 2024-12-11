@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://b140xnojbksko"]
+
+[ext_resource type="Script" path="res://escenas/inputs/inputs.gd" id="1_s8u7j"]
+[ext_resource type="Texture2D" uid="uid://ckfpo480svqvv" path="res://assets/sprites/items/0009.png" id="1_v3se3"]
+[ext_resource type="Texture2D" uid="uid://ddd62o00fenm7" path="res://assets/sprites/items/0010.png" id="2_a733s"]
+[ext_resource type="FontFile" uid="uid://dhsrvr3hbr2j4" path="res://assets/fonts/PixelSport-nRVRV.ttf" id="2_hj6dg"]
+[ext_resource type="Texture2D" uid="uid://cqeex8rqn8xcw" path="res://icon.svg" id="3_md3so"]
+
+[node name="Inputs" type="Node2D"]
+script = ExtResource("1_s8u7j")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -27.0
+offset_top = -45.0
+offset_right = 1903.0
+offset_bottom = 1224.0
+color = Color(1, 0.0352941, 1, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -261.0
+offset_right = 261.0
+offset_bottom = 254.0
+grow_horizontal = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_hj6dg")
+theme_override_font_sizes/normal_font_size = 40
+text = "Mi lista de inputs"
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Llave 1"
+popup/item_0/icon = ExtResource("1_v3se3")
+popup/item_1/text = "Lllave2"
+popup/item_1/icon = ExtResource("2_a733s")
+popup/item_1/id = 1
+
+[node name="HSeparator2" type="HSeparator" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Unico"
+
+[node name="HSeparator3" type="HSeparator" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "Unico"
+icon = ExtResource("3_md3so")
+
+[node name="HSeparator4" type="HSeparator" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="ItemList" type="ItemList" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+auto_height = true
+item_count = 3
+item_0/text = "asdasdasd"
+item_1/text = "asdasdasd"
+item_2/text = "asdasdasdasd"
+
+[connection signal="toggled" from="ColorRect/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="toggled" from="ColorRect/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]

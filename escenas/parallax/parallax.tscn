@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bank007shsugs"]
+
+[ext_resource type="PackedScene" uid="uid://c6pqr37wxy46p" path="res://escenas/player/player.tscn" id="1_cvnnh"]
+[ext_resource type="Texture2D" uid="uid://bkoiska0lwri1" path="res://assets/sprites/PARALLAX/layer_01_1920 x 1080.png" id="1_w7seb"]
+[ext_resource type="Texture2D" uid="uid://nh8xqvij8cs4" path="res://assets/sprites/PARALLAX/layer_02_1920 x 1080.png" id="2_6nmp2"]
+[ext_resource type="Texture2D" uid="uid://bdr8vv8toyohf" path="res://assets/sprites/PARALLAX/layer_03_1920 x 1080.png" id="3_bflu3"]
+[ext_resource type="Texture2D" uid="uid://c7t7p0ntn0a2o" path="res://assets/sprites/PARALLAX/layer_04_1920 x 1080.png" id="4_acygs"]
+
+[node name="Parallax" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_cvnnh")]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(955, 631)
+scale = Vector2(1.00521, 1.17963)
+texture = ExtResource("1_w7seb")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(955, 631)
+scale = Vector2(1.00521, 1.17963)
+texture = ExtResource("2_6nmp2")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(947, 827)
+scale = Vector2(1.00521, 1.17963)
+texture = ExtResource("3_bflu3")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(947, 827)
+scale = Vector2(1.00521, 1.17963)
+texture = ExtResource("4_acygs")

@@ -90,7 +90,7 @@ func demage(_demage) -> void:
 	pass	
 	
 func initial_hp(_hp)->void:
-	print("current hp:"+str(_hp))
+	#print("current hp:"+str(_hp))
 	#$Label.set_text(str(_hp))
 	$ProgressBar.value = hp;
 	hp = _hp;

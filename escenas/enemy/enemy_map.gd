@@ -14,7 +14,7 @@ var rng:RandomNumberGenerator 		= RandomNumberGenerator.new()
 @onready var player = get_parent().get_node("Player")
 
 #var speed = 100;
-var SPEED = 100.0
+var SPEED = 50.0
 var player_pos:Vector2;
 var target_pos:Vector2;
 
@@ -27,7 +27,7 @@ func _ready() -> void:
 	var my_random_number:int = rng.randi_range(1,5)
 	enemy_id = my_random_number;
 	var monster:String = "monster"+str(my_random_number);
-	print(monster);
+	#print(monster);
 	$AnimatedSprite2D.play(monster)
 	$AnimatedSprite2D.pause();
 	tween.set_loops(0)
@@ -56,7 +56,7 @@ func _process(delta: float) -> void:
 		#print(collider.name )
 		if(collider.name == "Player"):
 			#vimos al jugador
-			print("te vi")
+			#print("te vi")
 			if(chase==false):
 				#perseguir al jugador
 				$AudioStreamPlayer2D.play();
@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 				chase = true;
 		elif(collider.name == "TileMapLayer"):
 			#perdimos de vista al jugador
-			print("no te vi")
+			#print("no te vi")
 			chase = false;
 			
 	
@@ -83,11 +83,11 @@ func _process(delta: float) -> void:
 		player_pos = player.position;
 		target_pos = (player_pos - position).normalized();
 		#print(target_position)
-		print(position.distance_to(player_pos))
+		#print(position.distance_to(player_pos))
 		#validamos la distancia del jugador
 		#if(position.distance_to(player_pos)<1000.00):
 		position += (target_pos * SPEED) * delta;
-		print("perseguir")
+		#print("perseguir")
 		#pass"""
 	pass
 

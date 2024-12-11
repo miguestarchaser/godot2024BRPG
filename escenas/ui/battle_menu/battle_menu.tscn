@@ -37,6 +37,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Label1" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 38.0
 offset_top = 14.0
 offset_right = 361.0
@@ -44,6 +45,7 @@ offset_bottom = 37.0
 text = "ATAQUE"
 
 [node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 38.0
 offset_top = 41.0
 offset_right = 361.0
@@ -52,6 +54,7 @@ text = "DEFENSA
 "
 
 [node name="Label3" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 38.0
 offset_top = 68.0
 offset_right = 361.0
@@ -60,6 +63,7 @@ text = "ITEM
 "
 
 [node name="Label4" type="Label" parent="Control"]
+layout_mode = 0
 offset_left = 38.0
 offset_top = 95.0
 offset_right = 361.0

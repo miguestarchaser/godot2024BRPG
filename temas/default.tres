@@ -1,0 +1,45 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://ceu7m4j1f8fwc"]
+
+[ext_resource type="FontFile" uid="uid://dhsrvr3hbr2j4" path="res://assets/fonts/PixelSport-nRVRV.ttf" id="1_wqn67"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a540f"]
+bg_color = Color(0.592242, 0.000653423, 0.672433, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1s05k"]
+bg_color = Color(0.894803, 0.230048, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vigw3"]
+bg_color = Color(0.930962, 0.521804, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ubapl"]
+bg_color = Color(0.471869, 0.000399389, 0.537146, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0yv8"]
+bg_color = Color(0.960257, 0.717438, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_od25p"]
+bg_color = Color(0.884305, 0.28459, 0.954083, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qnrkg"]
+bg_color = Color(0.776731, 0.38754, 1, 1)
+
+[resource]
+default_font = ExtResource("1_wqn67")
+default_font_size = 40
+Button/styles/focus = SubResource("StyleBoxFlat_a540f")
+Button/styles/hover = SubResource("StyleBoxFlat_1s05k")
+Button/styles/hover_mirrored = SubResource("StyleBoxFlat_vigw3")
+Button/styles/normal = SubResource("StyleBoxFlat_ubapl")
+Button/styles/pressed = SubResource("StyleBoxFlat_t0yv8")
+CheckButton/font_sizes/font_size = 42
+OptionButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OptionButton/font_sizes/font_size = 45
+OptionButton/styles/normal = SubResource("StyleBoxFlat_od25p")
+Panel/styles/panel = SubResource("StyleBoxFlat_qnrkg")
+RichTextLabel/colors/font_outline_color = Color(1, 0.180438, 0.635583, 1)
+RichTextLabel/colors/font_shadow_color = Color(1, 0.305882, 0.733333, 1)
+RichTextLabel/constants/outline_size = 1
+RichTextLabel/constants/shadow_offset_x = 5
+RichTextLabel/constants/shadow_offset_y = 4
+RichTextLabel/font_sizes/bold_font_size = 40

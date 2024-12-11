@@ -20,3 +20,6 @@ class_name character_data
 @export var position:Vector2 	= Vector2(0,0)
 @export var color:Color 		= Color.AZURE;
 @export var ready:bool 			= true;
+
+#inventario
+@export var inventory:Array[String] = [];

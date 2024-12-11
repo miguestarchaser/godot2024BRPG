@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkho47jf7ugim"]
+
+[ext_resource type="Texture2D" uid="uid://cgu2js7s5b64e" path="res://assets/sprites/items/Small Lock Door.png" id="1_7inb2"]
+[ext_resource type="Script" path="res://escenas/items/lock/lock.gd" id="1_net1g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj4b4"]
+size = Vector2(111, 73)
+
+[node name="lock" type="StaticBody2D" groups=["lock"]]
+script = ExtResource("1_net1g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, -1.5)
+shape = SubResource("RectangleShape2D_fj4b4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7inb2")

@@ -15,6 +15,7 @@ var last_item_position:Vector2;
 
 #Notifica la opcion seleccionada
 signal 	selected_action(action);
+signal  change_option(option) 
 
 var ui_enter 	= preload("res://assets/sounds/22.wav") 			
 var ui_move 	= preload("res://assets/sounds/06.wav")
@@ -63,6 +64,9 @@ func update_labels(target) -> void:
 	for label in $Labels.get_children():
 		if(current == target):
 			label.add_theme_color_override("font_color",Color.WEB_GREEN)
+			#print("emitiendo:")
+			#print(actions[current_position-1])
+			emit_signal("change_option",(current-1));
 		else:
 			label.add_theme_color_override("font_color",Color.WHITE)
 		current += 1;
