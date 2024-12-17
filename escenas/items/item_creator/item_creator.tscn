@@ -208,6 +208,15 @@ offset_right = 554.0
 offset_bottom = 1018.0
 text = "Guardar"
 
+[node name="borrar" type="Button" parent="Panel/VBoxContainer/btn"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 129.0
+offset_top = 1048.0
+offset_right = 555.0
+offset_bottom = 1096.0
+text = "Borrar"
+
 [node name="Control" type="Control" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
@@ -233,4 +242,5 @@ stream = ExtResource("5_lsomc")
 [connection signal="button_up" from="Panel/VBoxContainer/sprite/prev_sprite" to="." method="_on_prev_sprite_button_up"]
 [connection signal="button_up" from="Panel/VBoxContainer/sprite/next_sprite" to="." method="_on_next_sprite_button_up"]
 [connection signal="button_up" from="Panel/VBoxContainer/btn/save" to="." method="_on_save_button_up"]
+[connection signal="button_up" from="Panel/VBoxContainer/btn/borrar" to="." method="_on_borrar_button_up"]
 [connection signal="item_selected" from="Panel/VBoxContainer/Control/item_list" to="." method="_on_item_list_item_selected"]

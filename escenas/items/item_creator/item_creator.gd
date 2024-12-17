@@ -31,6 +31,7 @@ func _ready() -> void:
 	print("se encontrarion:"+str(portraits.size())+" Elementos!")
 	#actualizamos el sprite por defecto
 	update_portrait();	
+	%borrar.visible = false;
 	pass # Replace with function body.
 
 
@@ -45,9 +46,16 @@ func update_item_list()->void:
 	items = dir_contents("res://data/item","res")
 	#creamos la opcion de nuevo item
 	%item_list.add_item("NUEVO");
-	#agregamos el contenido de la carpeta
+	#agregamos el contenido de la carpeta 
 	for item in items:
-		%item_list.add_item(item);
+		var load_path 				= item_dir+item;
+		var load_item 				= load(load_path);
+		var sprite:Texture2D 		= load("res://assets/sprites/items/"+load_item.sprite)
+		#sprite.set("scale",Vector2(0.5,0.5))
+	
+		##%item_list.add_item(item);
+		%item_list.add_icon_item(sprite,item)
+	%item_list.fit_to_longest_item = false
 	pass
 
 #cabiamos de sprite hacia atras
@@ -133,7 +141,22 @@ func _on_save_button_up() -> void:
 		ResourceSaver.save(item_default, file);
 		#actualizamos la lista de items disponibles
 		update_item_list();
+		clear_inputs();
 	pass # Replace with function body.
+
+func clear_inputs()->void:
+	$"%item_list".select(0)
+	%item_key.text	 			= ""
+	%item_name.text	 			= ""
+	%item_type.select(0);
+	%item_desc.text				= "";
+	#%item_unique.toggle_mode	= false;	
+	%item_unique.button_pressed = false;
+	%item_key.editable			= true;
+	%borrar.visible 			= false;
+	current_portrait			= 0;
+	update_portrait();
+	pass
 
 #Cargar un item de la lista
 func _on_item_list_item_selected(index: int) -> void:
@@ -141,16 +164,8 @@ func _on_item_list_item_selected(index: int) -> void:
 	#print(index)
 	#Si el index es 0 limpiamos los items para crear un item nuevo
 	if(index==0):
-		%item_key.text	 			= ""
-		%item_name.text	 			= ""
-		%item_type.select(0);
-		%item_desc.text				= "";
-		#%item_unique.toggle_mode	= false;	
-		%item_unique.button_pressed = false;
-		%item_key.editable			= true;
-		current_portrait			= 0;
-		update_portrait();
-		
+		clear_inputs();
+		%borrar.visible = false;
 	else:
 		#Si no buscamos el item y lo cargamos
 		#recuperamos el nombre del archivo de la lista
@@ -187,5 +202,16 @@ func _on_item_list_item_selected(index: int) -> void:
 		#Seteamos el switch button
 		%item_type.select(type_count);
 		#bloqueamos la edicion de key para evitar duplicar archivos
-		%item_key.editable= false;
+		%item_key.editable	= false;
+		%borrar.visible 	= true;
+	pass # Replace with function body.
+
+
+func _on_borrar_button_up() -> void:
+	var target 					= %item_list.get_item_text(%item_list.get_selected_id())
+	var path 					= item_dir+target;
+	DirAccess.remove_absolute(path)
+	update_item_list();
+	clear_inputs()
+	
 	pass # Replace with function body.

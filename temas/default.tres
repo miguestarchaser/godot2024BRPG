@@ -34,6 +34,7 @@ Button/styles/pressed = SubResource("StyleBoxFlat_t0yv8")
 CheckButton/font_sizes/font_size = 42
 OptionButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 OptionButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+OptionButton/constants/icon_max_width = 5
 OptionButton/font_sizes/font_size = 45
 OptionButton/styles/normal = SubResource("StyleBoxFlat_od25p")
 Panel/styles/panel = SubResource("StyleBoxFlat_qnrkg")

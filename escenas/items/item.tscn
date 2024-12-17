@@ -3,17 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://cqeex8rqn8xcw" path="res://icon.svg" id="1_1r462"]
 [ext_resource type="Script" path="res://escenas/items/item.gd" id="1_wyuiv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdwnn"]
-size = Vector2(139, 138)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vg8uc"]
+size = Vector2(130, 126)
 
 [node name="Area2D" type="Area2D"]
+position = Vector2(423, 284)
 script = ExtResource("1_wyuiv")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_1r462")
+item_key = "item1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_kdwnn")
+shape = SubResource("RectangleShape2D_vg8uc")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1r462")

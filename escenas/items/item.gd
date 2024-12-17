@@ -1,28 +1,53 @@
+@tool
 extends Area2D
+
+var item_dir:String 	= "res://data/item/";
+var utilities 			= load("res://scripts/utilities/utilities.gd")
+var utility  			= utilities.new()
+#var items 				= utility.dir_contents(item_dir,"res");
+@export_group("Propiedades del item")
+#@export var item_list:Array[String] = items;
+var previus_file			 = ""; 
 @export var item_key:String  = "";
 @export var item_name:String = "";
 @export var item_type:String = "";
 @export var item_icon:String = "";
+@export var item_desc:String = "";
 @export var item_unique:bool = false;
+
+#@export_subgroup("Enums")
+#enum NamedEnum {UNO,DOS,TRES,CUATRO}
+#@export var x:NamedEnum
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-	
-func _set_item_data(filename:String)->void:
-	var file = "res://data/menus/"+filename+".json"
-	var json_as_text 	= FileAccess.get_file_as_string(file)
-	var json_dict 		= JSON.parse_string(json_as_text)
-	item_key 			= json_dict.key;
-	item_name 			= json_dict.name;
-	item_type 			= json_dict.type;
-	item_icon 			= json_dict.icon;
-	item_unique 		= json_dict.unique;
-	pass
+	#print(items)
+	#print(item_list)
 
+	
+	
+	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if(previus_file!=item_key):
+		print("actuaizar item")
+		var file_path = "res://data/item/"+item_key+".res"
+		print(file_path)
+		#Verificamos si existe el archivo
+		if ResourceLoader.exists(file_path):
+			#cargamos la informacion a nuestro item
+			var item_data = load(file_path)
+			var texture = "res://assets/sprites/items/"+item_data.sprite
+			$Sprite2D.set_texture(load(texture))
+			previus_file = item_key;
+			item_name=item_data.name
+			item_icon=item_data.sprite
+			item_type=item_data.type
+			item_desc=item_data.description
+			item_unique=item_data.unique
+		else:
+			print("no existe")
 	pass
 
 
