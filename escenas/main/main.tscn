@@ -574,9 +574,3 @@ position = Vector2(1576, 1077)
 
 [node name="Area2D" parent="." instance=ExtResource("7_gujqy")]
 position = Vector2(158, 1087)
-item_key = "item3"
-item_name = "Huevo"
-item_type = "QUEST"
-item_icon = "0003.png"
-item_desc = "Un huevote"
-item_unique = true
